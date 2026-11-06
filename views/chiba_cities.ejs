@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>千葉県の市一覧</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 40px 20px;
+      background-color: #f4f6f8;
+      color: #222222;
+      font-family: sans-serif;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .table-container {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #ffffff;
+    }
+
+    caption {
+      padding: 12px;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: left;
+    }
+
+    th,
+    td {
+      padding: 12px 16px;
+      border: 1px solid #aaaaaa;
+      text-align: left;
+    }
+
+    thead {
+      background-color: #1565c0;
+      color: #ffffff;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #eaf2fb;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <h1>千葉県の市</h1>
+
+    <div class="table-container">
+      <table>
+        <caption>千葉県の市一覧</caption>
+
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">市名</th>
+            <th scope="col">読み方</th>
+            <th scope="col">地域</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% for (const row of data) { %>
+            <tr>
+              <td><%= row.id %></td>
+              <td><%= row.name %></td>
+              <td><%= row.reading %></td>
+              <td><%= row.area %></td>
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</body>
+</html>

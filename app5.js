@@ -37,6 +37,51 @@ app.get("/keiyo_add", (req, res) => {
   });
 });
 
+const chibaCities = [
+  {
+    id: 1,
+    name: "千葉市",
+    reading: "ちばし",
+    area: "中央地域"
+  },
+  {
+    id: 2,
+    name: "船橋市",
+    reading: "ふなばしし",
+    area: "葛南地域"
+  },
+  {
+    id: 3,
+    name: "市川市",
+    reading: "いちかわし",
+    area: "葛南地域"
+  },
+  {
+    id: 4,
+    name: "松戸市",
+    reading: "まつどし",
+    area: "東葛飾地域"
+  },
+  {
+    id: 5,
+    name: "柏市",
+    reading: "かしわし",
+    area: "東葛飾地域"
+  },
+  {
+    id: 6,
+    name: "成田市",
+    reading: "なりたし",
+    area: "印旛地域"
+  }
+];
+
+app.get("/chiba_cities", (req, res) => {
+  res.render("chiba_cities", {
+    data: chibaCities
+  });
+});
+
 app.get("/hello1", (req, res) => {
   const message1 = "Hello world";
   const message2 = "Bon jour";
